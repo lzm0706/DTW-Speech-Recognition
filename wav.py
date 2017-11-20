@@ -4,7 +4,6 @@ import pylab as pl
 
 def wavread(filename):
     #读取wav文件
-    #filename ="F:\study\课程\语音识别\homework\第七次\\1.wav"
     print('---reading wav file  ',filename,'---\n')
     wavefile = wave.open(filename, 'r')
 
@@ -34,5 +33,3 @@ def wavread(filename):
     pl.show()
     '''
     return wave_data
-
-#wavread("F:\study\课程\语音识别\homework\第七次\\1.wav")
