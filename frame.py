@@ -6,6 +6,7 @@ def enframe(signal, nw, inc, winfunc):
     nw:每一帧的长度(这里指采样点的长度，即采样频率乘以时间间隔)
     inc:相邻帧的间隔（同上定义）
     '''
+    print('---framing---\n')
     signal_length=len(signal) #信号总长度
     if signal_length<=nw: #若信号长度小于一个帧的长度，则帧数定义为1
         nf=1

@@ -6,4 +6,5 @@ def pre_emphasis(signal,coefficient=0.95):
     signal:原始信号
     coefficient:加重系数，默认为0.95
     '''
+    print('---pre emphasis---\n')
     return numpy.append(signal[0],signal[1:]-coefficient*signal[:-1])

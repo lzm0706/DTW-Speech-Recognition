@@ -7,12 +7,12 @@ import scipy.signal as signal
 import numpy
 import vad
 import feature
-
+print('\n---get command---\n')
 str1=sys.argv[1]
 str2=sys.argv[2]
 trainlist=str1.replace('\\','/')
 model=str2.replace('\\','/')
-
+print('---opening txt files---\n')
 trainlistob=open(trainlist)
 modelob=open(model,'w')
 
@@ -34,10 +34,11 @@ for line in trainlistob.readlines():
     
     feat=feature.mfcc(na,512)
     numpy.set_printoptions(threshold=numpy.nan,linewidth=numpy.nan)
+    print('---output results of',name,'---\n')
     print(label,file=modelob)
     print(feat,file=modelob)
     #print(numpy.shape(feat))
-    
+print('\n---training complete---\n')    
 trainlistob.close
 modelob.close
 

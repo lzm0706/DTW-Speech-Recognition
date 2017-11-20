@@ -34,6 +34,7 @@ def zcr(frames):
     return zcr
 
 def vioceextrac(frames):
+    print('---extracting active voice----\n')
     nframe=np.shape(frames)[0]
     lframe=np.shape(frames)[1]
     mh=10

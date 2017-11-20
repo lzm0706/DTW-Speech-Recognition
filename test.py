@@ -35,9 +35,9 @@ for line in testlistob.readlines():
     na=vad.vioceextrac(n)
     
     feattest=feature.mfcc(na,512)
-    print(numpy.shape(feattest))
+    #print(numpy.shape(feattest))
     modelob=open(model)
-    
+    print('---DTW---\n')
     i=0
 
     dist=[]
@@ -58,7 +58,7 @@ for line in testlistob.readlines():
             #print(feattrain)
             featarr=[]
             dist.append(sr.score(feattrain,feattest))
-            print(nf,m)
+            #print(nf,m)
             nf=0
             label.append(mline)
 
@@ -90,10 +90,13 @@ for line in testlistob.readlines():
             #print(feattrain)
             featarr=[]
             dist.append(sr.score(feattrain,feattest))
-            print(nf,m)
+            #print(nf,m)
+    print('---min distance matching---\n')
     labelnum=dist.index(min(dist))
+    print('---output matching result---\n')
     print(label[labelnum],file=resultob)
     modelob.close
+print('\n---recognition complete---\n')
             
 testlistob.close
 resultob.close

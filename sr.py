@@ -10,6 +10,7 @@ def dist(feat1,feat2):
     return d
     
 def dtw(dist):
+    
     realmax=1.79E+308
     n=np.shape(dist)[0]
     m=np.shape(dist)[1]

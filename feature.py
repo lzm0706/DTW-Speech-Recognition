@@ -3,6 +3,7 @@ import scipy.io.wavfile
 from scipy.fftpack import dct
 
 def mfcc(frames,NFFT=512,sample_rate=16000):
+    print('---computing MFCC features---\n')
     #帧能量谱
     mag_frames = numpy.absolute(numpy.fft.rfft(frames, NFFT))  # Magnitude of the FFT
     pow_frames = ((1.0 / NFFT) * ((mag_frames) ** 2))  # Power Spectrum

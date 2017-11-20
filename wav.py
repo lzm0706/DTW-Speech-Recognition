@@ -5,6 +5,7 @@ import pylab as pl
 def wavread(filename):
     #读取wav文件
     #filename ="F:\study\课程\语音识别\homework\第七次\\1.wav"
+    print('---reading wav file  ',filename,'---\n')
     wavefile = wave.open(filename, 'r')
 
     #读取wav文件的四种信息的函数。numframes表示一共读取了几个frames
@@ -13,9 +14,9 @@ def wavread(filename):
     framerate = wavefile.getframerate()  
     numframes = wavefile.getnframes()  
 
-    print("channel",nchannels)  
-    print("sample_width",sample_width)  
-    print("framerate",framerate)  
+    #print("channel",nchannels)  
+    #print("sample_width",sample_width)  
+    #print("framerate",framerate)  
     #print("numframes",numframes)
 
     str_data = wavefile.readframes(numframes)
